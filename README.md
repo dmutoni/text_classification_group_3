@@ -1,10 +1,10 @@
-# 🧠 Mental Health Text Classification: A Comprehensive Multi-Model Embedding Comparison
+# Mental Health Text Classification: A Comprehensive Multi-Model Embedding Comparison
 
 <div align="center">
 
 A systematic comparative study evaluating Traditional Machine Learning and Deep Learning architectures across multiple word embedding techniques for automated mental health crisis detection from social media text.
 
-**[📄 Report](#) • [💻 GitHub](#) • [📊 Contribution Tracker](#)**
+**[Report](#) • [GitHub](#) • [Contribution Tracker](#)**
 
 **Team:** Group 3 - African Leadership University  
 **Course:** Formative 2: Comparative Analysis of Text Classification  
@@ -18,33 +18,29 @@ A systematic comparative study evaluating Traditional Machine Learning and Deep 
 
 ## 📑 Table of Contents
 
-- [🎯 Overview](#-overview)
-- [🔬 Problem Statement](#-problem-statement)
-- [🎯 Research Objectives](#-research-objectives)
-- [📊 Dataset](#-dataset)
-- [🏗️ Models & Embeddings](#️-models--embeddings)
-- [✨ Key Features](#-key-features)
-- [📁 Project Structure](#-project-structure)
-- [🔧 Installation](#-installation)
-- [🚀 Quick Start](#-quick-start)
-- [📊 Results Summary](#-results-summary)
-- [👥 Team Contributions](#-team-contributions)
-- [📚 Documentation](#-documentation)
-- [🎓 Citation](#-how-to-cite)
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [Research Objectives](#-research-objectives)
+- [Dataset](#-dataset)
+- [Models & Embeddings](#️-models--embeddings)
+- [Key Features](#-key-features)
+- [Results Summary](#-results-summary)
+- [Documentation](#-documentation)
+- [Citation](#-how-to-cite)
 
 ---
 
-## 🎯 Overview
+## Overview
 
 Mental health disorders affect millions worldwide, with social media platforms increasingly serving as spaces where individuals express psychological distress before seeking professional help. This comprehensive research project implements and evaluates **four distinct model architectures** across **multiple word embedding techniques** to enable automated early detection of mental health crises.
 
-### 🔬 What Makes This Study Unique?
+### What Makes This Study Unique?
 
 <table>
 <tr>
 <td width="50%">
 
-**🏗️ Multi-Architecture Comparison**
+** Multi-Architecture Comparison**
 - Traditional ML (Logistic Regression, Random Forest)
 - Deep Learning (RNN, LSTM, GRU)
 - Systematic evaluation across all models
@@ -52,7 +48,7 @@ Mental health disorders affect millions worldwide, with social media platforms i
 </td>
 <td width="50%">
 
-**📊 Comprehensive Embedding Analysis**
+** Comprehensive Embedding Analysis**
 - TF-IDF (Statistical baseline)
 - Word2Vec (Skip-gram & CBOW)
 - GloVe (Pre-trained global vectors)
@@ -63,7 +59,7 @@ Mental health disorders affect millions worldwide, with social media platforms i
 <tr>
 <td width="50%">
 
-**🔧 Domain-Specific Preprocessing**
+** Domain-Specific Preprocessing**
 - 18-technique pipeline
 - Negation handling
 - Mental health-aware stopwords
@@ -72,7 +68,7 @@ Mental health disorders affect millions worldwide, with social media platforms i
 </td>
 <td width="50%">
 
-**⚖️ Class Imbalance Solutions**
+** Class Imbalance Solutions**
 - Handles 13.6:1 imbalance ratio
 - Weighted loss functions
 - Macro F1 evaluation
@@ -82,13 +78,13 @@ Mental health disorders affect millions worldwide, with social media platforms i
 </tr>
 </table>
 
-### 📈 Research Impact
+###  Research Impact
 
 > *"Contextual embeddings consistently outperform traditional TF-IDF by 8-13% in F1-score across all architectures, with FastText achieving the highest performance due to its robust handling of noisy social media text."*
 
 ---
 
-## 🔬 Problem Statement
+##  Problem Statement
 
 Mental health crises are increasingly expressed through digital platforms, creating both challenges and opportunities for early intervention through automated text analysis.
 
@@ -112,11 +108,11 @@ Mental health crises are increasingly expressed through digital platforms, creat
 
 ## 🎯 Research Objectives
 
-1. ✅ **Compare performance** of traditional ML and deep learning architectures using controlled experiments
-2. ✅ **Evaluate effectiveness** of 5 embedding techniques across all models
-3. ✅ **Identify optimal combinations** for different mental health categories
-4. ✅ **Provide interpretability** explaining why certain approaches outperform others
-5. ✅ **Deliver actionable recommendations** for deploying mental health NLP systems
+1.  **Compare performance** of traditional ML and deep learning architectures using controlled experiments
+2.  **Evaluate effectiveness** of 5 embedding techniques across all models
+3.  **Identify optimal combinations** for different mental health categories
+4.  **Provide interpretability** explaining why certain approaches outperform others
+5.  **Deliver actionable recommendations** for deploying mental health NLP systems
 
 ---
 
@@ -209,15 +205,15 @@ Configuration:
 ```
 
 **Strengths:**
-- ✅ Fast training and inference
-- ✅ Interpretable (word importance scores)
-- ✅ No embedding training needed
-- ✅ Works well with linear models
+- Fast training and inference
+- Interpretable (word importance scores)
+- No embedding training needed
+- Works well with linear models
 
 **Limitations:**
-- ❌ Cannot capture semantic similarity
-- ❌ Sparse, high-dimensional vectors
-- ❌ Struggles with context
+- Cannot capture semantic similarity
+- Sparse, high-dimensional vectors
+- Struggles with context
 
 **Best Used With:** Logistic Regression, Random Forest
 
@@ -336,18 +332,18 @@ Configuration:
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 🔧 Enhanced Preprocessing Pipeline (18 Techniques)
+###  Enhanced Preprocessing Pipeline (18 Techniques)
 
 Our preprocessing pipeline is **specifically designed for mental health text**, preserving psychological signals that standard NLP pipelines discard.
 
 | Category | Techniques | Clinical Rationale |
 |----------|------------|-------------------|
-| **🧹 Text Cleaning**<br/>(6 techniques) | 1. URL removal<br/>2. HTML tag removal<br/>3. Email/phone removal<br/>4. Reddit-specific formatting<br/>5. Emoji → text conversion<br/>6. Special character normalization | Removes platform noise while preserving emotional signals (emojis converted to "crying_face" rather than deleted) |
-| **📝 Normalization**<br/>(4 techniques) | 7. Lowercase conversion<br/>8. Contraction expansion ("I'm" → "I am")<br/>9. Slang expansion ("idk" → "i do not know")<br/>10. Spelling correction (optional) | Standardizes text while preserving meaning and expanding informal language common in crisis posts |
-| **🧠 Linguistic Processing**<br/>(5 techniques) | 11. **Negation handling** 🔴 **CRITICAL**<br/>12. Tokenization<br/>13. Mental health-aware stopwords<br/>14. Lemmatization + POS tagging<br/>15. POS feature extraction | **Negation:** "not happy" → "not_happy" preserves semantic polarity (±3-5% F1 improvement)<br/><br/>**Stopwords:** Retains "I", "me", "my" (self-reference = depression marker) |
-| **📊 Feature Engineering**<br/>(3 techniques) | 16. Text length features<br/>17. Sentiment indicators (!, ?, ...)<br/>18. Mental health keyword detection | Captures emotional intensity (excessive punctuation), anxiety markers (question marks), and clinical terminology |
+| ** Text Cleaning**<br/>(6 techniques) | 1. URL removal<br/>2. HTML tag removal<br/>3. Email/phone removal<br/>4. Reddit-specific formatting<br/>5. Emoji → text conversion<br/>6. Special character normalization | Removes platform noise while preserving emotional signals (emojis converted to "crying_face" rather than deleted) |
+| ** Normalization**<br/>(4 techniques) | 7. Lowercase conversion<br/>8. Contraction expansion ("I'm" → "I am")<br/>9. Slang expansion ("idk" → "i do not know")<br/>10. Spelling correction (optional) | Standardizes text while preserving meaning and expanding informal language common in crisis posts |
+| ** Linguistic Processing**<br/>(5 techniques) | 11. **Negation handling** 🔴 **CRITICAL**<br/>12. Tokenization<br/>13. Mental health-aware stopwords<br/>14. Lemmatization + POS tagging<br/>15. POS feature extraction | **Negation:** "not happy" → "not_happy" preserves semantic polarity (±3-5% F1 improvement)<br/><br/>**Stopwords:** Retains "I", "me", "my" (self-reference = depression marker) |
+| ** Feature Engineering**<br/>(3 techniques) | 16. Text length features<br/>17. Sentiment indicators (!, ?, ...)<br/>18. Mental health keyword detection | Captures emotional intensity (excessive punctuation), anxiety markers (question marks), and clinical terminology |
 
 > 💡 **Impact:** Domain-specific preprocessing contributes **3-5% F1 improvement** over generic pipelines (validated through ablation experiments).
 
@@ -377,9 +373,8 @@ Our preprocessing pipeline is **specifically designed for mental health text**, 
 mental_health_classification/
 │
 ├── 📄 README.md                              # This file
-├── 📄 requirements.txt                       # Python dependencies
 ├── 📄 Text_Classification_Group_3_Report.pdf # Full research paper
-├── 🔗 contribution_tracker.md                # Team contributions
+├── 🔗 contribution_tracker                   # Team contributions
 │
 ├── 📂 data/
 │   ├── Combined Data.csv                     # Mental health dataset (52,681 samples)
@@ -392,35 +387,6 @@ mental_health_classification/
 │   ├── 03_lstm_analysis.ipynb               # Rodas - LSTM experiments
 │   └── 04_gru_analysis.ipynb                # Denyse - GRU experiments
 │
-├── 📂 src/
-│   ├── preprocessing/
-│   │   ├── enhanced_preprocessing.py        # 18-technique pipeline
-│   │   └── data_loader.py                   # Data loading utilities
-│   │
-│   ├── models/
-│   │   ├── logistic_regression.py           # Traditional ML models
-│   │   ├── rnn_model.py                     # RNN architecture
-│   │   ├── lstm_model.py                    # LSTM architecture
-│   │   └── gru_model.py                     # GRU architecture
-│   │
-│   ├── embeddings/
-│   │   ├── tfidf_vectorizer.py              # TF-IDF implementation
-│   │   ├── word2vec_trainer.py              # Word2Vec (Skip-gram/CBOW)
-│   │   ├── glove_loader.py                  # GloVe pre-trained loader
-│   │   └── fasttext_trainer.py              # FastText implementation
-│   │
-│   └── evaluation/
-│       ├── metrics.py                       # Evaluation metrics
-│       └── visualization.py                 # Plotting utilities
-│
-├── 📂 scripts/
-│   ├── run_eda.py                           # Exploratory data analysis
-│   ├── train_logistic_regression.py         # Train LR models
-│   ├── train_rnn.py                         # Train RNN models
-│   ├── train_lstm.py                        # Train LSTM models
-│   ├── train_gru.py                         # Train GRU models
-│   └── compare_all_models.py                # Generate comparison tables
-│
 └── 📂 results/
     ├── models/                              # Saved trained models
     │   ├── logistic_regression/
@@ -428,18 +394,14 @@ mental_health_classification/
     │   ├── lstm/
     │   └── gru/
     │
-    ├── metrics/                             # Performance metrics (JSON/CSV)
-    │   └── comprehensive_comparison.csv
-    │
     ├── figures/                             # Visualizations
     │   ├── eda/                             # Exploratory analysis
     │   ├── confusion_matrices/              # Per-model confusion matrices
     │   └── comparisons/                     # Cross-model comparisons
     │
     └── tables/                              # LaTeX/CSV comparison tables
-        ├── overall_performance.csv
-        ├── per_class_performance.csv
-        └── statistical_significance.csv
+        ├── overall_performance
+        └── per_class_performance
 ```
 
 ---
